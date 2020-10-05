@@ -27,8 +27,11 @@ defined('MOODLE_INTERNAL') || die;
 
 /**
  * This block simply outputs the Marketing Slots.
+ *
+ * @copyright  2020 Leeloo LXP (https://leeloolxp.com)
+ * @author     Leeloo LXP <info@leeloolxp.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class block_tb_m_slots extends block_base {
 
     /**
