@@ -1,5 +1,5 @@
 # Leeloo LXP Marketing Slots Block
-
+this block allows you to show marketing blocks added in Leeloo LXP to. be shown on moodle.
 Installation Instructions
 =========================
 
