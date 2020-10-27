@@ -100,61 +100,38 @@ class block_tb_m_slots extends block_base {
         $resposedata = json_decode($output);
         $mdata = $resposedata->data->marketing_data;
 
-        if (empty($mdata->block_title)) {
-            $mdata->block_title = get_string('displayname', 'block_tb_m_slots');
+        if (empty($resposedata->data->block_title)) {
+            $resposedata->data->block_title = get_string('displayname', 'block_tb_m_slots');
         }
-        $this->title = $mdata->block_title;
+        $this->title = $resposedata->data->block_title;
+
+        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/jquery.min.js'));
+        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owl.carousel.js'));
+        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider.js'));
+
+        $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.carousel.min.css'));
+        $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.theme.default.min.css'));
 
         $this->content = new stdClass();
-        $this->content->text = '<div class="tb_m_slots">';
+        $this->content->text = '<div class="tb_m_slots owl-carousel owl-theme">';
 
-        $this->content->text .= '<div id="content_box1" class="content_box">';
+        foreach($mdata as $mdatasing){
+            $this->content->text .= '<div id="content_box" class="content_box">';
 
-        $this->content->text .= '<div class="content_img">';
-        $this->content->text .= '<a href="' . $mdata->box_1_link . '"><img src="' . $mdata->box_1_img . '"/></a>';
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div class="content_title">';
-        $this->content->text .= $mdata->box_1_title;
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div class="content_des">';
-        $this->content->text .= $mdata->box_1_desc;
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div id="content_box2" class="content_box">';
-
-        $this->content->text .= '<div class="content_img">';
-        $this->content->text .= '<a href="' . $mdata->box_2_link . '"><img src="' . $mdata->box_2_img . '"/></a>';
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div class="content_title">';
-        $this->content->text .= $mdata->box_2_title;
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div class="content_des">';
-        $this->content->text .= $mdata->box_2_desc;
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div id="content_box3" class="content_box">';
-
-        $this->content->text .= '<div class="content_img">';
-        $this->content->text .= '<a href="' . $mdata->box_3_link . '"><img src="' . $mdata->box_3_img . '"/></a>';
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div class="content_title">';
-        $this->content->text .= $mdata->box_3_title;
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '<div class="content_des">';
-        $this->content->text .= $mdata->box_3_desc;
-        $this->content->text .= '</div>';
-
-        $this->content->text .= '</div>';
+            $this->content->text .= '<div class="content_img">';
+            $this->content->text .= '<a href="' . $mdatasing->box_1_link . '"><img src="' . $mdatasing->box_1_img . '"/></a>';
+            $this->content->text .= '</div>';
+    
+            $this->content->text .= '<div class="content_title">';
+            $this->content->text .= $mdatasing->box_1_title;
+            $this->content->text .= '</div>';
+    
+            $this->content->text .= '<div class="content_des">';
+            $this->content->text .= $mdatasing->box_1_desc;
+            $this->content->text .= '</div>';
+    
+            $this->content->text .= '</div>';
+        }
 
         $this->content->text .= '</div>';
 

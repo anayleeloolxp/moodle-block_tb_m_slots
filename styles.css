@@ -3,8 +3,6 @@
     flex-wrap: wrap;
 }
 .block_tb_m_slots .tb_m_slots .content_box {
-    max-width: 33.3333%;
-    padding: 0 10px;
     text-align: center;
 }
 .block_tb_m_slots .tb_m_slots .content_box .content_title {
