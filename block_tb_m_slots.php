@@ -100,6 +100,7 @@ class block_tb_m_slots extends block_base {
         }
 
         $resposedata = json_decode($output);
+        $autoslide = $resposedata->data->autoslide;
         $mdata = $resposedata->data->marketing_data;
 
         if (empty($resposedata->data->block_title)) {
@@ -109,7 +110,12 @@ class block_tb_m_slots extends block_base {
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owl.carousel.js'));
-        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider.js'));
+        if($autoslide == 1){
+            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider-auto.js'));
+        }else{
+            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider.js'));
+        }
+        
 
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.carousel.min.css'));
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.theme.default.min.css'));
