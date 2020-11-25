@@ -25,10 +25,18 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    $settings->add(new admin_setting_configtext(
+
+    require_once($CFG->dirroot . '/blocks/tb_m_slots/lib.php');
+
+    $setting = new admin_setting_configtext(
         'block_tb_m_slots/license',
         get_string('license', 'block_tb_m_slots'),
         get_string('license', 'block_tb_m_slots'),
         0
-    ));
+    );
+    $setting->set_updatedcallback(updateconfm_slots());
+    $settings->add($setting);
+
+    $setting = new admin_setting_configm_slots('block_tb_m_slots/settingsjson', '', '', '', PARAM_RAW);
+    $settings->add($setting);
 }
