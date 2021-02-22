@@ -7,6 +7,7 @@ require(["jquery"],function($) {
             margin: 10,
             responsiveClass: true,
             autoplay: true,
+            dots: false,
             responsive: {
                 0: {
                     items: 1,
