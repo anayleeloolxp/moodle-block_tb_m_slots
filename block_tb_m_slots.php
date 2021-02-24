@@ -58,9 +58,9 @@ class block_tb_m_slots extends block_base {
         $leeloolxplicense = get_config('block_tb_m_slots')->license;
         $settingsjson = get_config('block_tb_m_slots')->settingsjson;
         $resposedata = json_decode(base64_decode($settingsjson));
-        
-        $autoslide = $resposedata->data->autoslide;
-        $mdata = $resposedata->data->marketing_data;
+
+        $autoslide = @$resposedata->data->autoslide;
+        $mdata = @$resposedata->data->marketing_data;
 
         if (empty($resposedata->data->block_title)) {
             $resposedata->data->block_title = get_string('displayname', 'block_tb_m_slots');
@@ -69,12 +69,11 @@ class block_tb_m_slots extends block_base {
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owl.carousel.js'));
-        if($autoslide == 1){
+        if ($autoslide == 1) {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider-auto.js'));
-        }else{
+        } else {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider.js'));
         }
-        
 
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.carousel.min.css'));
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.theme.default.min.css'));
@@ -82,21 +81,21 @@ class block_tb_m_slots extends block_base {
         $this->content = new stdClass();
         $this->content->text = '<div class="tb_m_slots owl-carousel owl-theme">';
 
-        foreach($mdata as $mdatasing){
+        foreach ($mdata as $mdatasing) {
             $this->content->text .= '<div id="content_box" class="content_box">';
 
             $this->content->text .= '<div class="content_img">';
             $this->content->text .= '<a href="' . $mdatasing->box_1_link . '"><img src="' . $mdatasing->box_1_img . '"/></a>';
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '<div class="content_title">';
             $this->content->text .= $mdatasing->box_1_title;
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '<div class="content_des">';
             $this->content->text .= $mdatasing->box_1_desc;
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '</div>';
         }
 
@@ -124,7 +123,7 @@ class block_tb_m_slots extends block_base {
     public function applicable_formats() {
         return array('all' => true);
     }
-    
+
     /**
      * Get settings from Leeloo
      */
