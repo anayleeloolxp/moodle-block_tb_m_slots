@@ -22,6 +22,12 @@ require(["jquery"],function($) {
                     nav: true,
                     dots: false,
                     margin: 20
+                },
+                1300: {
+                    items: 4,
+                    nav: true,
+                    dots: false,
+                    margin: 20
                 }
             }
         });
