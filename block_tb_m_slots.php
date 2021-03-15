@@ -59,6 +59,14 @@ class block_tb_m_slots extends block_base {
         $settingsjson = get_config('block_tb_m_slots')->settingsjson;
         $resposedata = json_decode(base64_decode($settingsjson));
 
+        if (!isset($resposedata->data->marketing_data)) {
+            $this->title = get_string('displayname', 'block_tb_m_slots');
+            $this->content = new stdClass();
+            $this->content->text = '';
+            $this->content->footer = '';
+            return $this->content;
+        }
+
         $autoslide = @$resposedata->data->autoslide;
         $mdata = @$resposedata->data->marketing_data;
 

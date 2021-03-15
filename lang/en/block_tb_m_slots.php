@@ -27,3 +27,5 @@ $string['pluginname'] = 'Leeloo LXP Marketing Slots';
 $string['displayname'] = 'Leeloo LXP Marketing Slots';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
+
+$string['privacy:metadata'] = 'The Leeloo LXP Marketing Slots (tb_m_slots) block only shows information and does not store data itself.';
