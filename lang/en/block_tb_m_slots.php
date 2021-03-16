@@ -25,6 +25,7 @@
 
 $string['pluginname'] = 'Leeloo LXP Marketing Slots';
 $string['displayname'] = 'Leeloo LXP Marketing Slots';
+$string['blocktitle'] = 'Leeloo LXP Marketing Slots';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
 $string['tb_m_slots:addinstance'] = 'Add a new Leeloo LXP Marketing Slots block';
