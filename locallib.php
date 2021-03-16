@@ -52,6 +52,7 @@ function updateconfm_slots() {
     if ($infoleeloolxp->status != 'false') {
         $leeloolxpurl = $infoleeloolxp->data->install_url;
     } else {
+        set_config('settingsjson', base64_encode($output), 'block_tb_m_slots');
         return;
     }
     $url = $leeloolxpurl . '/admin/Theme_setup/get_marketing_slots';
