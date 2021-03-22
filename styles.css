@@ -7,13 +7,13 @@
 }
 .block_tb_m_slots .tb_m_slots .content_box .content_title {
     padding: 1.25rem 1.25rem 10px;
-    font-size: 45px;
+    font-size: 22px;
     font-weight: 700;
     font-family: "Nunito Sans", sans-serif;
 }
 .block_tb_m_slots .tb_m_slots .content_box .content_des {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 18px;
     padding: 0 1.25rem;
 }
 .block_tb_m_slots .tb_m_slots .content_img img {
@@ -22,7 +22,6 @@
 
 @media only screen and (max-width: 1199px) {
     .block_tb_m_slots .tb_m_slots .content_box .content_title {
-        font-size: 35px;
         margin: 0 0 5px;
     }
     .block_tb_m_slots .tb_m_slots .content_box .content_des {
@@ -31,9 +30,6 @@
 }
 
 @media only screen and (max-width: 991px) {
-    .block_tb_m_slots .tb_m_slots .content_box .content_title {
-        font-size: 25px;
-    }
     .block_tb_m_slots .tb_m_slots .content_box .content_title {
         padding: 10px;
         margin: 0;
