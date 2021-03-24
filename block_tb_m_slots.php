@@ -83,9 +83,6 @@ class block_tb_m_slots extends block_base {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/js/owlslider.js'));
         }
 
-        $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.carousel.min.css'));
-        $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_m_slots/css/owl.theme.default.min.css'));
-
         $this->content = new stdClass();
         $this->content->text = '<div class="tb_m_slots owl-carousel owl-theme">';
 
