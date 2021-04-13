@@ -128,12 +128,4 @@ class block_tb_m_slots extends block_base {
     public function applicable_formats() {
         return array('all' => true);
     }
-
-    /**
-     * Get settings from Leeloo
-     */
-    public function cron() {
-        require_once($CFG->dirroot . '/blocks/tb_m_slots/lib.php');
-        updateconfm_slots();
-    }
 }
