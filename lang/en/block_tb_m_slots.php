@@ -23,12 +23,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Leeloo LXP Marketing Slots';
-$string['displayname'] = 'Leeloo LXP Marketing Slots';
-$string['blocktitle'] = 'Leeloo LXP Marketing Slots';
+$string['pluginname'] = 'Leeloo LXP Benefits Spots';
+$string['displayname'] = 'Leeloo LXP Benefits Spots';
+$string['blocktitle'] = 'Leeloo LXP Benefits Spots';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
-$string['tb_m_slots:addinstance'] = 'Add a new Leeloo LXP Marketing Slots block';
-$string['tb_m_slots:myaddinstance'] = 'Add a new Leeloo LXP Marketing Slots block to Dashboard';
+$string['tb_m_slots:addinstance'] = 'Add a new Leeloo LXP Benefits Spots block';
+$string['tb_m_slots:myaddinstance'] = 'Add a new Leeloo LXP Benefits Spots block to Dashboard';
 
-$string['privacy:metadata'] = 'The Leeloo LXP Marketing Slots (tb_m_slots) block only shows information and does not store data itself.';
+$string['privacy:metadata'] = 'The Leeloo LXP Benefits Spots (tb_m_slots) block only shows information and does not store data itself.';

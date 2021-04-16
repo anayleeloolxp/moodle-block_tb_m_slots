@@ -1,5 +1,5 @@
-# Leeloo LXP Marketing Slots Block
-this block allows you to show marketing blocks added in Leeloo LXP to. be shown on moodle.
+# Leeloo LXP Benefits Spots Block
+this block allows you to show Benefits Spots blocks added in Leeloo LXP to. be shown on moodle.
 Installation Instructions
 =========================
 
@@ -8,7 +8,7 @@ Installation Instructions
 * Place the folder (eg "tb_m_slots") in the "blocks" subdirectory.
 * Visit http://yoursite.com/admin to complete the installation
 * Turn editing on the my page.
-* Add the block to the page ("Leeloo LXP Marketing Slots Block (tb_m_slots)")
+* Add the block to the page ("Leeloo LXP Benefits Spots Block (tb_m_slots)")
 * Visit the config link in the block for more options.
 
 License

@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 /**
- * This block simply outputs the Marketing Slots.
+ * This block simply outputs the Benefits Spots.
  *
  * @copyright  2020 Leeloo LXP (https://leeloolxp.com)
  * @author     Leeloo LXP <info@leeloolxp.com>
