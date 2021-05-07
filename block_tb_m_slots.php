@@ -60,7 +60,11 @@ class block_tb_m_slots extends block_base {
         $resposedata = json_decode(base64_decode($settingsjson));
 
         if (!isset($resposedata->data->marketing_data)) {
-            $this->title = get_string('displayname', 'block_tb_m_slots');
+            if ($this->page->user_is_editing()) {
+                $this->title = get_string('displayname', 'block_tb_m_slots');
+            } else {
+                $this->title = '';
+            }
             $this->content = new stdClass();
             $this->content->text = '';
             $this->content->footer = '';
@@ -71,7 +75,11 @@ class block_tb_m_slots extends block_base {
         $mdata = @$resposedata->data->marketing_data;
 
         if (empty($resposedata->data->block_title)) {
-            $resposedata->data->block_title = get_string('displayname', 'block_tb_m_slots');
+            if ($this->page->user_is_editing()) {
+                $resposedata->data->block_title = get_string('displayname', 'block_tb_m_slots');
+            } else {
+                $resposedata->data->block_title = '';
+            }
         }
         $this->title = $resposedata->data->block_title;
 
