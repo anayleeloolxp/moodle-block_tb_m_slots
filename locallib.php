@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Fetch and Update Configration From L
  */
-function updateconfm_slots() {
+function block_tb_m_slots_updateconf() {
     if (isset(get_config('block_tb_m_slots')->license)) {
         $leeloolxplicense = get_config('block_tb_m_slots')->license;
     } else {
