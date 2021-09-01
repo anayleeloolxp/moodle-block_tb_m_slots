@@ -43,7 +43,7 @@ class admin_setting_configm_slots extends admin_setting {
     /**
      * Config text constructor
      *
-     * @param string $name unique ascii name, either 'mysetting' for settings that in config, or 'myplugin/mysetting' for ones in config_plugins.
+     * @param string $name unique ascii name.
      * @param string $visiblename localised
      * @param string $description long localised info
      * @param string $defaultsetting
@@ -76,10 +76,10 @@ class admin_setting_configm_slots extends admin_setting {
      */
     public function write_setting($data) {
         if ($this->paramtype === PARAM_INT and $data === '') {
-            // do not complain if '' used instead of 0
+            // Do not complain if '' used instead of 0.
             $data = 0;
         }
-        // $data is a string
+        // The $data is a string.
         $validated = $this->validate($data);
         if ($validated !== true) {
             return $validated;
@@ -93,7 +93,7 @@ class admin_setting_configm_slots extends admin_setting {
      * @return mixed true if ok string if error found
      */
     public function validate($data) {
-        // allow paramtype to be a custom regex if it is the form of /pattern/
+        // Allow paramtype to be a custom regex if it is the form of /pattern/ .
         if (preg_match('#^/.*/$#', $this->paramtype)) {
             if (preg_match($this->paramtype, $data)) {
                 return true;
@@ -105,7 +105,7 @@ class admin_setting_configm_slots extends admin_setting {
         } else {
             $cleaned = clean_param($data, $this->paramtype);
             if ("$data" === "$cleaned") {
-                // implicit conversion to string is needed to do exact comparison
+                // Implicit conversion to string is needed to do exact comparison.
                 return true;
             } else {
                 return get_string('validateerror', 'admin');

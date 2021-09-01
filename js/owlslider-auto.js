@@ -1,5 +1,5 @@
-require(["jquery"],function($) {
-    
+require(["jquery"], function($) {
+
     $(document).ready(function() {
 
         $('.layout_boxed .tb_m_slots').owlCarousel({
@@ -62,5 +62,5 @@ require(["jquery"],function($) {
             }
         });
 
-    });    
+    });
 });
