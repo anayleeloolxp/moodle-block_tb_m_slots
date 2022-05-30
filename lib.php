@@ -122,6 +122,7 @@ class admin_setting_configm_slots extends admin_setting {
      */
     public function output_html($data, $query = '') {
         $default = $this->get_defaultsetting();
-        return '<input type="hidden" size="' . $this->size . '" id="' . $this->get_id() . '" name="' . $this->get_full_name() . '" value="' . s($data) . '" />';
+        return '<input type="hidden" size="' . $this->size . '" id="' . $this->get_id() . '"
+        name="' . $this->get_full_name() . '" value="' . s($data) . '" />';
     }
 }

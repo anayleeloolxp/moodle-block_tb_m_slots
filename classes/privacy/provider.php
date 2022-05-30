@@ -25,8 +25,6 @@
 
 namespace block_tb_m_slots\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for block_tb_m_slots implementing null_provider.
  *

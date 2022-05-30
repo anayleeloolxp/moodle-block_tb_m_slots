@@ -33,7 +33,7 @@ if ($ADMIN->fulltree) {
         get_string('license', 'block_tb_m_slots'),
         0
     );
-    //$setting->set_updatedcallback(block_tb_m_slots_updateconf());
+
     $settings->add($setting);
 
     $setting = new admin_setting_configm_slots('block_tb_m_slots/settingsjson', '', '', '', PARAM_RAW);
