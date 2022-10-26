@@ -79,7 +79,13 @@ class block_tb_m_slots extends block_base {
                 $resposedata->data->block_title = '';
             }
         }
-        $this->title = $resposedata->data->block_title;
+
+        $summaryformatoptions = new stdClass();
+        $summaryformatoptions->noclean = false;
+        $summaryformatoptions->overflowdiv = false;
+        $summaryformatoptions->filter = true;
+
+        $this->title = format_text($resposedata->data->block_title, 1, $summaryformatoptions);
 
         $this->page->requires->jquery();
         $this->page->requires->js(new moodle_url('/blocks/tb_m_slots/js/owl.carousel.js'));
@@ -100,11 +106,11 @@ class block_tb_m_slots extends block_base {
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="content_title">';
-            $this->content->text .= $mdatasing->box_1_title;
+            $this->content->text .= format_text($mdatasing->box_1_title, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="content_des">';
-            $this->content->text .= $mdatasing->box_1_desc;
+            $this->content->text .= format_text($mdatasing->box_1_desc, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '</div>';
